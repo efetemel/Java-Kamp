@@ -11,6 +11,6 @@ public class Course {
 		this.id = id;
 		this.courseName = courseName;
 		this.courseCategory = courseCategory;
-		this.coursePrice = coursePrice;
+		this.coursePrice = coursePrice;//test
 	}
 }
