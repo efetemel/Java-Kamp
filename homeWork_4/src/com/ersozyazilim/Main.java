@@ -6,6 +6,7 @@ import com.ersozyazilim.entites.User;
 import com.ersozyazilim.logSystem.DatabaseLogger;
 import com.ersozyazilim.logSystem.Logger;
 import com.ersozyazilim.logSystem.SmsLogger;
+import com.ersozyazilim.managers.CampaignManager;
 import com.ersozyazilim.managers.GameManager;
 import com.ersozyazilim.managers.UserManager;
 import com.ersozyazilim.managers.adapters.EdevletServiceAdapter;
@@ -21,7 +22,10 @@ public class Main {
         userManager.register(user); // Kullanıcı kayıtı
         Game game = new Game(1,"Minecraft",80);
         GameManager gameManager = new GameManager(loggers);
+        gameManager.addGame(game);
         Campaign campaign = new Campaign(1,"Yılbaşı Kampanyası",18);
+        CampaignManager campaignManager = new CampaignManager();
+        campaignManager.addCampaign(campaign);
         gameManager.sell(game,user,campaign); // Kampanyalı satış
         gameManager.sell(game,user); // Düz kampanyasız satış
 

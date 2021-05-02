@@ -1,5 +1,6 @@
 package com.ersozyazilim.managers;
 
+import com.ersozyazilim.Utils;
 import com.ersozyazilim.entites.User;
 import com.ersozyazilim.logSystem.Logger;
 
@@ -16,10 +17,12 @@ public class UserManager implements UserService {
     @Override
     public void register(User user) {
         if(userCheckService.checkIfRealUser(user)){
-            System.out.println(user.getUsername()+" Kayıt oldu.");
+            System.out.println(user.getUsername()+" Sisteme kayıt oldu.");
+            Utils.setLog(loggers,user.getUsername()+" Sisteme kayıt oldu.");
         }
         else{
             System.out.println(user.getUsername()+" Bilgileriniz geçersiz.");
+            Utils.setLog(loggers,user.getUsername()+" Bilgileriniz geçersiz.");
         }
     }
 

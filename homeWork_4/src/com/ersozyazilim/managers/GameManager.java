@@ -38,4 +38,22 @@ public class GameManager implements GameService{
             System.out.println(user.getUsername()+" "+game.getGameName()+" Adlı oyunu "+price+" almaya parası yetersiz.");
         }
     }
+
+    @Override
+    public void addGame(Game game) {
+        System.out.println(game.getGameName()+" Adlı oyun eklendi.");
+        Utils.setLog(loggers, game.getGameName()+" Adlı oyun eklendi.");
+    }
+
+    @Override
+    public void delGame(Game game) {
+        System.out.println(game.getGameName()+" Adlı oyun silindi.");
+        Utils.setLog(loggers, game.getGameName()+" Adlı oyun silindi.");
+    }
+
+    @Override
+    public void updateGame(Game game) {
+        System.out.println(game.getGameName()+" Adlı oyun güncellendi.");
+        Utils.setLog(loggers, game.getGameName()+" Adlı oyun güncellendi.");
+    }
 }
